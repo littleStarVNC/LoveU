@@ -1,0 +1,133 @@
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f0f8ff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    overflow: hidden;
+}
+
+.container {
+    text-align: center;
+    background-color: #ffffff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    opacity: 0;
+    transform: translateY(50px);
+    animation: fadeIn 1s forwards;
+    width: 90%;
+    max-width: 600px;
+}
+
+h1 {
+    color: #ff69b4;
+    font-size: 2em;
+}
+
+.images {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 20px 0;
+    flex-wrap: wrap;
+}
+
+.photo {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    margin: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    opacity: 0;
+    transform: scale(0.8);
+    animation: appear 1s forwards;
+}
+
+.photo:nth-child(1) {
+    animation-delay: 0.5s;
+}
+
+.photo:nth-child(3) {
+    animation-delay: 0.5s;
+}
+
+.heart {
+    width: 100px;
+    height: 100px;
+    opacity: 0;
+    transform: scale(0.8);
+    animation: appear 1s forwards;
+    animation-delay: 1s;
+}
+
+.content {
+    font-size: 1.2em;
+    color: #333;
+    opacity: 0;
+    animation: fadeIn 1s forwards;
+    animation-delay: 1.5s;
+}
+
+.content p {
+    margin: 0;
+}
+
+.hidden {
+    max-height: 0;
+    overflow: hidden;
+    opacity: 0;
+    transition: max-height 0.5s ease-out, opacity 0.5s ease-out;
+}
+
+a {
+    color: #ff69b4;
+    text-decoration: none;
+    cursor: pointer;
+    display: inline-block;
+    margin-top: 10px;
+}
+
+a:hover + #additionalText {
+    max-height: 500px; /* Adjust based on your content's height */
+    opacity: 1;
+    transition: max-height 0.5s ease-in, opacity 0.5s ease-in;
+}
+
+@keyframes fadeIn {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes appear {
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+/* Responsive design */
+@media (max-width: 600px) {
+    .photo {
+        width: 100px;
+        height: 100px;
+        margin: 5px;
+    }
+
+    .heart {
+        width: 70px;
+        height: 70px;
+    }
+
+    h1 {
+        font-size: 1.5em;
+    }
+
+    .content {
+        font-size: 1em;
+    }
+}
